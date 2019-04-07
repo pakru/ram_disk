@@ -1,0 +1,13 @@
+[Unit]
+Description=RAM Disk Service
+Before=umount.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/home/pavel/ramdisk_utils/init_ramdisk.sh
+ExecStop=/home/pavel/ramdisk_utils/stop_ramdisk.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
